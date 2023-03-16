@@ -4,11 +4,9 @@
  * main - Entry point
  *
  * Return: Always 0 (Success)
- */
+*/
 
 int main(void)
-
-int 
 {
 	printf("size of char: %lu byte(s)\n", sizeof(char));
 	printf("size of int: %lu byte(s)\n", sizeof(int));
