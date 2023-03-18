@@ -15,21 +15,25 @@ int d;
 
 	for (b = '0'; b <= '9'; b++)
 	{
-		for(c = '0'; c <= '9'; c++)
+		for (c = b + 1; c <= '9'; c++)
 		{
-			for (d = '0'; d <= '0'; d++)
+			for (d = c + 1; d <= '9'; d++)
 			{
-				if (b != c && c != d)
+				if (b != c)
 				{
 				putchar(b);
 				putchar(c);
 				putchar(d);
+				if (b < '7' || c < '8' || d < '9')
+				{
 				putchar(',');
 				putchar(' ');
+				}
 				}
 			}
 
 		}
 	}
+	putchar('\n');
 	return (0);
 }
