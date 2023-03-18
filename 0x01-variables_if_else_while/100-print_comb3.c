@@ -20,7 +20,7 @@ int main(void)
 			{
 			putchar(b);
 			putchar(c);
-			if (c != EOF && b != EOF)
+			if (b < '8' || c < '9')
 			{
 			putchar(',');
 			putchar(' ');
