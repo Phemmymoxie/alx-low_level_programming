@@ -3,13 +3,12 @@
 #include <stdio.h>
 
 /**
- * main: number generator and checker
- *
+ * main - Number generator and checker that check the last digit
  * This program generates a random number each time it's run
  * It then generates the last digit of the number
  * If the last digit is `0`, greater than 5 or less than 6 and not zero.
  *
- * Return Always (0)
+ * Return: Always (0)
 */
 
 int main(void)
