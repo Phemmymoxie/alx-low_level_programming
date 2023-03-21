@@ -1,36 +1,29 @@
 #include <stdio.h>
 
 /**
- * main - A program that print two two combination of numbers from 1 to 99
- *
- * Return: Always 0
-*/
-
+ * main - entry point
+ * Return: always return 0
+ */
 int main(void)
 {
-	int a;
-	int b;
-
-	for (a = 0; a <= 99; a++) 
-	{
-	for (b = a +1; b <= 99; b++) 
-		{
-
-		putchar((a / 10) + '0');
-		putchar((a % 10) + '0');
-		putchar(' ');
-		putchar((b / 10) + '0');
-		putchar((b % 10) + '0');
-		
-		}
-
-		if (!(a == 98 && b == 99)) 
-		{
-		putchar(',');
-		putchar(' ');
-		}
-			
-	}
-	putchar('\n');
-	return (0);
+int i;
+int j;
+for (i = 0; i <= 99; i++)
+{
+for (j = i + 1; j <= 99; j++)
+{
+putchar(i / 10 + '0');
+putchar(i % 10 + '0');
+putchar(' ');
+putchar(j / 10 + '0');
+putchar(j % 10 + '0');
+if (!(i == 98 && j == 99))
+{
+putchar(',');
+putchar(' ');
+}
+}
+}
+putchar('\n');
+return (0);
 }
