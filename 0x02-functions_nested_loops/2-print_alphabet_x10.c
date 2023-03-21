@@ -1,13 +1,21 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * main - check the code.
+ * print_alphabet_x10 - prints all alphabets from a to z in ten places
  *
  * Return: Always 0.
- */
-int main(void)
+*/
+
+void print_alphabet_x10(void)
 {
-    print_alphabet_x10();
-    return (0);
+	int h, g;
+
+	for (h = 0; h < 10; h++)
+	{
+		for (g = 'a'; g <= 'z'; g++)
+		{
+		_putchar(g);
+		}
+	_putchar('\n');
+	}
 }
