@@ -6,23 +6,25 @@
  * Return: Always 0
  */
 
- int main(void)
- {
- 
+int main(void)
+{
 	int i;
-	int t1 = 1;
-	int t2 = 2;
-	int next_term = t1 + t2;
+	long int t1 = 1;
+	long int t2 = 2;
+	long int next_term = t1 + t2;
 
-	printf("%d, %d, ", t1, t2);
+	printf("%ld, %ld, ", t2, next_term);
 
-	for (i = 3; i < 50; i++)
+	for (i = 3; i <= 50; i++)
 	{
-	printf("%d, ", next_term);
+	printf("%ld", next_term);
 	t1 = t2;
 	t2 = next_term;
 	next_term = t1 + t2;
+	if (i < 50)
+	printf(", ");
 	}
+	printf("\n");
 	return (0);
 
 }
