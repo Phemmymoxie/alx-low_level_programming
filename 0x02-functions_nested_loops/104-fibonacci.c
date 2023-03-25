@@ -9,9 +9,9 @@
 int main(void)
 {
 	int i;
-	long int f1 = 1;
-	long int f2 = 2;
-	long int next_t = f1 + f2;
+	unsigned long int f1 = 1;
+	unsigned long int f2 = 2;
+	unsigned long int next_t = f1 + f2;
 
 	printf("%ld, %ld, ", f1, f2);
 
