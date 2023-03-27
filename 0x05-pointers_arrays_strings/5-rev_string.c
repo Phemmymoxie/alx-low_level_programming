@@ -22,7 +22,5 @@ void rev_string(char *s)
 		ch = str[i];
 		str[i] = str[n - i - 1];
 		str[n - i - 1] = ch;
-		
 	}
-
 }

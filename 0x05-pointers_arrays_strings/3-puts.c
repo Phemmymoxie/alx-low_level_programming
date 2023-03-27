@@ -9,5 +9,13 @@
 
 void _puts(char *str)
 {
-	printf("%s\n", str);
+	char *t = str;
+
+	while (*t != '\0')
+	{
+	_putchar(*t);
+	t++;
+	}
+
+_putchar('\n');
 }
