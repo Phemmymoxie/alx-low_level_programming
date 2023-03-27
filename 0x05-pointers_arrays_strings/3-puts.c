@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
  * _puts - check the code
  * @str: parameter passed
@@ -8,5 +9,5 @@
 
 void _puts(char *str)
 {
- 	printf("%s\n", str);
+	printf("%s\n", str);
 }
