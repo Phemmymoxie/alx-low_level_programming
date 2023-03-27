@@ -13,7 +13,7 @@ void print_rev(char *s)
 	int n;
 	int i;
 	char ch;
-	char str[128];
+	char str[1000];
 
 
 	strcpy(str, s);
