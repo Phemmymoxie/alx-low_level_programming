@@ -13,15 +13,16 @@ void rev_string(char *s)
 	int i;
 	int n;
 	char ch;
-	char str[100];
+	char *str = s;
 
 	n = strlen(s);
-	strcpy(str, s);
+
 	for (i = 0; i < n / 2; i++)
 	{
 		ch = str[i];
 		str[i] = str[n - i - 1];
 		str[n - i - 1] = ch;
+		
 	}
-	printf("%s\n", str);
+
 }
