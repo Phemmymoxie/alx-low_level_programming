@@ -15,9 +15,8 @@ void print_rev(char *s)
 	char ch;
 	char str[1000];
 
-
-	strcpy(str, s);
 	n = strlen(s);
+	strcpy(str, s);
 
 	for (i = 0; i < n / 2; i++)
 	{
