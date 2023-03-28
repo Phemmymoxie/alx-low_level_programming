@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-
+#include <string.h>
 /**
  * puts2 - check the code
  * @str: the argument to be displayed
@@ -9,12 +9,16 @@
 
 void puts2(char *str)
 {
-	char *ch = str;
+	int i;
+	int n;
 
-	while (*ch != '\0')
+	n = strlen(str);
+	for (i = 0; i <= n; i++) 
 	{
-		_putchar(*ch);
-		ch += 2;
+		if (i % 2 == 0)
+		
+		_putchar(str[i]);
+
 	}
 _putchar('\n');
 }
