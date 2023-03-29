@@ -21,11 +21,10 @@ void puts_half(char *str)
 		h += 1;
 	}
 
-	for (i = (g + h) / 2; i < g; i++)
-		{
-			_putchar(str[i]);
-		}
+	for (i = ((g + h) / 2); i < g; i++)
+	{
+		_putchar(str[i]);
+	}
 
-		_putchar('\n');
-
+	_putchar('\n');
 }
