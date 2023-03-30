@@ -1,6 +1,12 @@
 #include "main.h"
 #include <stdio.h>
 
+/**
+ * cap_string - capitalizes all words of a string
+ * @s: input string
+ * Return: always return pointer to dest
+ */
+
 char *cap_string(char *s)
 {
 	int g = 0, a;
@@ -20,10 +26,9 @@ char *cap_string(char *s)
 				if (s[g + 1] >= 97 && s[g + 1] <= 122)
 				{
 					s[g + 1] -= 32;
-					
 					break;
 				}
-			
+
 		a++;	}
 		}
 	g++;
