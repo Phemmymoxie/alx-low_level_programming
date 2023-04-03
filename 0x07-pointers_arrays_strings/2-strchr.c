@@ -19,7 +19,9 @@ char *_strchr(char *s, char c)
 		{
 			return (s + gem);
 		}
+
 		gem++;
 	}
+
 	return (NULL);
 }
