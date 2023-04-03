@@ -11,7 +11,7 @@
 
 char *_strchr(char *s, char c)
 {
-	int gem = 0;
+	unsigned int gem = 0;
 
 	while (s[gem] != '\0')
 	{
