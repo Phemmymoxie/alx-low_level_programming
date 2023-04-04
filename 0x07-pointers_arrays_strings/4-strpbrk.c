@@ -10,6 +10,7 @@
 char *_strpbrk(char *s, char *accept)
 {
 	unsigned int len, g, gb;
+	char *temp;
 
 	g = 0;
 	gb = 0;
@@ -24,10 +25,10 @@ char *_strpbrk(char *s, char *accept)
 
 	while (*s)
 	{
-
+	temp = accept;
 		for (g = 0; g < len; g++)
 		{
-			if (*(s + gb) == accept[g])
+			if (*(s + gb) == temp[g])
 			{
 				return (s + gb);
 			}
