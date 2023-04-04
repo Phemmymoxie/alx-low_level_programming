@@ -9,11 +9,7 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int len, g, gb;
 	char *temp;
-
-	g = 0;
-	gb = 0;
 
 	if (*s == '\0' || *accept == '\0')
 		{
@@ -21,19 +17,19 @@ char *_strpbrk(char *s, char *accept)
 		}
 	else
 	{
-	len = strlen(accept);
 
 	while (*s)
 	{
-	temp = accept;
-		for (g = 0; g < len; g++)
+		temp = accept;
+		while (*temp)
 		{
-			if (*(s + gb) == temp[g])
+			if (*s == *temp)
 			{
-				return (s + gb);
+				return (s);
 			}
+		temp++;
 		}
-	gb++;
+	s++;
 	}
 	}
 	return ('\0');
