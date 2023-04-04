@@ -28,11 +28,11 @@ unsigned int _strspn(char *s, char *accept)
 		else
 		{
 			if (j == len1 - 1)
-			return (len);
+			goto exit;
 		}
 		}
 	gb++;
 	}
 
-return (len);
+exit: return (len);
 }
