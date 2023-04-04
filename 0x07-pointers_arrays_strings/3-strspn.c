@@ -21,13 +21,15 @@ unsigned int _strspn(char *s, char *accept)
 		for (j = 0; j < len1; j++)
 		{
 		if (*(s + gb) == accept[j])
-			{
+		{
 			len++;
 			j = len1;
-			}
+		}
 		else
+		{
 			if (j == len1 - 1)
 			return (len);
+		}
 		}
 	gb++;
 	}
