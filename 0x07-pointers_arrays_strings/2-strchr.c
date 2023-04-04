@@ -16,11 +16,11 @@ char *_strchr(char *s, char c)
 	{
 		if (s[gem] == c)
 		{
-			return (s + gem);
+			break;
 		}
 
 		gem++;
 	}
 
-	return ('\0');
+	return (s[gem] == c ? (s + gem) : '\0');
 }
