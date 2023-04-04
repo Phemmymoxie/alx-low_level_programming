@@ -9,16 +9,24 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int gb = 0;
+	unsigned int gb = 0, l = 0;
+
+	while (*accept)
+	{
+		l++;
+	}
 
 	while (*s)
 	{
-		if (*(s + gb) == *accept)
+		for (j = 0; j < l; j++)
 		{
-			break;
+		if (*(s + gb) == accept[j])
+			{
+				break;
+				}
 		}
 	gb++;
 	}
 
-return (gb + 1);
+return (j + 1);
 }
