@@ -9,16 +9,11 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int gb = 0, l = 0;
-
-	while (*accept)
-	{
-		l++;
-	}
+	unsigned int gb = 0, j;
 
 	while (*s)
 	{
-		for (j = 0; j < l; j++)
+		for (j = 0; *accept; j++)
 		{
 		if (*(s + gb) == accept[j])
 			{

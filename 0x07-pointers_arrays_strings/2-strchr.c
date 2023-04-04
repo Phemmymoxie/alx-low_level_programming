@@ -1,4 +1,3 @@
-#include <stddef.h>
 #include "main.h"
 /**
  * _strchr - A function that checks a string and return a pointer.
@@ -15,7 +14,7 @@ char *_strchr(char *s, char c)
 
 	while (s[gem] != '\0')
 	{
-		if (s[gem] == c && s[gem + 1] != '\0')
+		if (s[gem] == c)
 		{
 			return (s + gem);
 		}
@@ -23,5 +22,5 @@ char *_strchr(char *s, char c)
 		gem++;
 	}
 
-	return (NULL);
+	return ('\0');
 }
