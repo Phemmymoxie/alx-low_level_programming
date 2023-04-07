@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * main - main code for suming up integers
@@ -11,11 +12,20 @@ int main(int argc, char *argv[])
 {
 	int cnt;
 	int sum = 0;
+	int len = 0;
+	int j;
 
-	if (argc == 1)
+	for (j = 0; j < argc; j++)
 	{
-		printf("%d\n", 0);
+		if (atoi(argv[j]))
+		{
+			len++;
+		}
 	}
+
+	if (len < 1)
+		printf("%d\n", 0);
+
 	else
 	{
 	for (cnt = 1; cnt < argc; cnt++)
@@ -26,7 +36,6 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			sum = 0;
 			printf("Error\n");
 			return (1);
 		}
