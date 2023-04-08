@@ -13,25 +13,16 @@ int main(int argc, char *argv[])
 {
 	int cnt;
 	int sum = 0;
-	int len = 0;
-	int j;
 
-	for (j = 0; j < argc; j++)
-	{
-		if (atoi(argv[j]))
-		{
-			len++;
-		}
-	}
 
-	if (len < 1)
+
+	if (argc < 3)
 		{
 		printf("%d\n", 0);
 		return (0);
 		}
 
-	else
-	{
+
 	for (cnt = 1; cnt < argc; cnt++)
 	{
 		if (atoi(argv[cnt]))
@@ -45,6 +36,6 @@ int main(int argc, char *argv[])
 		}
 	}
 	printf("%d\n", sum);
-	}
+
 	return (sum);
 }
