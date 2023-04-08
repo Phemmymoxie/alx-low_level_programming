@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * main - main code for suming up integers
@@ -24,7 +25,10 @@ int main(int argc, char *argv[])
 	}
 
 	if (len < 1)
+		{
 		printf("%d\n", 0);
+		return (0);
+		}
 
 	else
 	{
@@ -42,5 +46,5 @@ int main(int argc, char *argv[])
 	}
 	printf("%d\n", sum);
 	}
-	return (0);
+	return (sum);
 }
