@@ -41,8 +41,8 @@ int main(int argc, char *argv[])
 		cash += val / 2;
 		val = val % 2;
 	}
-	if (val == 1)
-		cash += 1;
+	if (val % 1 >= 0)
+		cash += val / 1;
 	printf("%d\n", cash);
 return (0);
 }
