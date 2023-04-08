@@ -12,13 +12,12 @@ int main(int argc, char *argv[])
 {
 	unsigned int len, cnt, sum = 0;
 
-	len = strlen(*argv);
 	if (argc < 3)
 		{
 		printf("%d\n", 0);
 		return (0);
 		}
-
+	len = argc;
 
 	for (cnt = 1; cnt < len; cnt++)
 	{
