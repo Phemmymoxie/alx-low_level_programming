@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	val = atoi(argv[1]);
 	if (val < 0)
 	{
-		printf("%d\n", 0);
+		printf("0\n");
 	}
 	if (val % 25 >= 0)
 	{
