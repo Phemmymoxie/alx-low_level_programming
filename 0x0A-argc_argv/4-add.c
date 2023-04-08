@@ -10,10 +10,9 @@
  */
 int main(int argc, char *argv[])
 {
-	int cnt;
-	int sum = 0;
+	unsigned int len, cnt, sum = 0;
 
-
+	len = strlen(*argv);
 	if (argc < 3)
 		{
 		printf("%d\n", 0);
@@ -21,7 +20,7 @@ int main(int argc, char *argv[])
 		}
 
 
-	for (cnt = 1; cnt < argc; cnt++)
+	for (cnt = 1; cnt < len; cnt++)
 	{
 		if (atoi(argv[cnt]))
 		{
