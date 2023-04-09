@@ -8,41 +8,29 @@
  */
 int main(int argc, char *argv[])
 {
-	int val;
+	int val, h;
 	int cash = 0;
+	char cent[5] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+
 	val = atoi(argv[1]);
+
 	if (val < 0)
+		printf("%d\n", 0);
+
+	for (h = 0; h < 5; h++)
 	{
-		printf("0\n");
+		if (val >= cent[h])
+		{
+			cash += val / cent[h];
+			val = val % cent[h];
+		}
 	}
-	if (val % 25 >= 0)
-	{
-		cash += val / 25;
-		val = val % 25;
-	}
-	if (val % 10 >= 0)
-	{
-		cash += val / 10;
-		val = val % 10;
-	}
-	if (val %  5 >= 0)
-	{
-		cash += val / 5;
-		val = val % 5;
-	}
-	if (val % 2 >= 0)
-	{
-		cash += val / 2;
-		val = val % 2;
-	}
-	if (val % 1 >= 0)
-		cash += val / 1;
-	printf("%d\n", cash);
+printf("%d\n", cash);
 return (0);
 }
