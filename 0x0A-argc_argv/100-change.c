@@ -34,5 +34,5 @@ int main(int argc, char *argv[])
 		}
 	}
 printf("%d\n", cash);
-return (cash);
+return (0);
 }
