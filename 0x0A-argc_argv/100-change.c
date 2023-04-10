@@ -21,8 +21,10 @@ int main(int argc, char *argv[])
 	val = atoi(argv[1]);
 
 	if (val < 0)
+	{
 		printf("%d\n", 0);
-
+		return (0);
+	}
 	for (h = 0; h < 5; h++)
 	{
 		if (val >= cent[h])
@@ -32,5 +34,5 @@ int main(int argc, char *argv[])
 		}
 	}
 printf("%d\n", cash);
-return (0);
+return (cash);
 }
