@@ -23,7 +23,6 @@ int main(int argc, char *argv[])
 	if (val < 0)
 	{
 		printf("%d\n", 0);
-		return (0);
 	}
 	for (h = 0; h < 5; h++)
 	{
