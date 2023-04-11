@@ -12,7 +12,7 @@
 char *_strdup(char *str)
 {
 	char *dup;
-	int h = strlen(str);
+	int h = strlen(str) + 1;
 	int j;
 
 	if (*str == '\0')
@@ -24,7 +24,7 @@ char *_strdup(char *str)
 
 	if (dup)
 	{
-	for (j = 0; j < h + 1; j++)
+	for (j = 0; j < h ; j++)
 	{
 		dup[j] = str[j];
 	}
