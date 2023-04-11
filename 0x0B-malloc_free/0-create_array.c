@@ -20,14 +20,15 @@ char *create_array(unsigned int size, char c)
 	}
 
 	ret = malloc(size * sizeof(c));
+	if (ret)
+	{
 	for (i = 0; i <= size; i++)
 	{
-		if (ret[i] == EOF)
-		{
-			return ('\0');
-		}
 		ret[i] = c;
 	}
+	}
+	else
+		return ('\0');
 
 return (ret);
 }
