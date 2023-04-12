@@ -18,6 +18,7 @@ void free_grid(int **grid, int height)
 		{
 			free(grid[cnt]);
 		}
+	free(grid);
 	}
 
 }
