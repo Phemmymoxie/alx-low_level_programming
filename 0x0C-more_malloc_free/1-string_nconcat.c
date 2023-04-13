@@ -15,8 +15,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *concat;
 	unsigned int cnt = 0, brk = 0, cat, hot;
 
-	cat = strlen(s1) + 1;
 	hot = strlen(s2);
+	cat = strlen(s1) + 1;
 
 	if (n >= hot)
 		n = hot;
@@ -45,8 +45,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			concat[cnt] = s2[brk];
 			cnt++;
 		}
+		else
+			break;
+
 		brk++;
 	}
-	concat[cnt + 1] = '\0';
-return (concat);
+	concat[cnt] = '\0';
+	return (concat);
 }
