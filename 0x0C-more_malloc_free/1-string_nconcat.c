@@ -16,7 +16,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int cnt = 0, brk = 0, cat, hot;
 
 	hot = strlen(s2);
-	cat = strlen(s1);
+	cat = strlen(s1) + 1;
 
 	if (n >= hot)
 		n = hot;
