@@ -35,7 +35,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			add = sum / 10;
 		else
 			add = 0;
-		if (sum > 0)
+		if (sum >= 0)
 			*(r + lag) = (sum % 10) + 48;
 		else
 			*(r + lag) = '0';
