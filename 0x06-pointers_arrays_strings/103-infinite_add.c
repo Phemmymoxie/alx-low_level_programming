@@ -21,10 +21,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		lag = vm;
 	else
 		lag = cm;
-
 	if (size_r <= lag + 1)
 		return (0);
-
 	r[lag + 1] = '\0';
 	cm--, vm--;
 	exc  = *(n1 + vm) - 48, exc2 = *(n2 + cm) - 48;
@@ -35,7 +33,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			add = sum / 10;
 		else
 			add = 0;
-		if (sum >= 0)
+		if (sum > 0)
 			*(r + lag) = (sum % 10) + 48;
 		else
 			*(r + lag) = '0';
@@ -49,5 +47,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			exc2 = 0;
 		lag--;
 	}
-	return (r);
+	if (*r == '0')
+		return (r + 1);
+	else
+		return (r);
 }
