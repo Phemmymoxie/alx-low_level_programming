@@ -13,8 +13,8 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_d;
-	int n_len = strlen(name);
-	int o_len = strlen(owner), cnt;
+	int n_len = strlen(name) - 1;
+	int o_len = strlen(owner) - 1, cnt;
 
 	new_d = (dog_t *)malloc(sizeof(dog_t));
 	if (new_d == NULL)
