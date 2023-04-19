@@ -28,9 +28,9 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	cnt = get_op_func(argv[2])(x, y);
+	cnt = (get_op_func(argv[2]))(x, y);
 
-	if (get_op_func(argv[2]) == NULL)
+	if ((get_op_func(argv[2])) == NULL)
 	{
 		printf("Error\n");
 		exit(99);
