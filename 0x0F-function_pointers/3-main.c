@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
 	cnt = get_op_func(argv[2])(x, y);
 
-	if (!(get_op_func(argv[2])))
+	if (get_op_func(argv[2]) == NULL)
 	{
 		printf("Error\n");
 		exit(99);
