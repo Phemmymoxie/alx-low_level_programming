@@ -24,10 +24,11 @@ int (*get_op_func(char *s))(int, int)
 	{
 		if (s[0] == ops->op[b])
 		{
-			return (ops[b / 2].f);
+			break;
 		}
 	b++;
 	}
-	return (NULL);
+
+	return (ops[b / 2].f);
 }
 
