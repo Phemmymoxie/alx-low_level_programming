@@ -2,6 +2,14 @@
 #include <stdio.h>
 #include "variadic_functions.h"
 
+/**
+ * print_strings - a function that prints strings
+ * arguments passed to its parameter
+ * @separator: the string that separates the output
+ * @n: the length of the string argument passed
+ * to the function
+ * Return: void.
+ */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int cnt;
@@ -25,4 +33,3 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_end(str);
 }
-	
