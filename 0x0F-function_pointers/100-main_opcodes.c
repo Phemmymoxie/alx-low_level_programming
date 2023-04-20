@@ -15,7 +15,7 @@ void ops_print(char *c, int n)
 	{
 		printf("%.2hhx", c[f]);
 
-		if (f < n + 1)
+		if (f < n - 1)
 			printf(" ");
 	f++;
 	}
