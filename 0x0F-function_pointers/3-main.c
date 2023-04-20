@@ -11,7 +11,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int cnt, x, y;
+	int (*cnt)(int, int);
+	int x, y;
 
 	x  = atoi(argv[1]);
 	y = atoi(argv[3]);
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	cnt = (get_op_func(argv[2]))(x, y);
+	cnt = get_op_func(argv[2]);
 
 	if (!(get_op_func(argv[2])))
 	{
@@ -36,7 +37,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	printf("%d\n", cnt);
+	printf("%d\n", cnt(x, y));
 
 return (0);
 }
