@@ -17,6 +17,7 @@ void print_string(va_list vab);
  */
 void print_all(const char * const format, ...)
 {
+	va_list res;
 	fmt_get str[] = {
 		{"c", print_char},
 		{"i", print_int},
@@ -24,7 +25,6 @@ void print_all(const char * const format, ...)
 		{"s", print_string}
 			};
 	int cnt = 0, f;
-	va_list res;
 	char *sep = "";
 
 	va_start(res, format);
@@ -43,8 +43,7 @@ void print_all(const char * const format, ...)
 		}
 	cnt++;
 	}
-	if(!(format))
-		exit(-1);
+
 	printf("\n");
 
 	va_end(res);
