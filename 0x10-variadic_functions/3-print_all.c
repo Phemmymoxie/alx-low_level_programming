@@ -20,11 +20,13 @@ void print_all(const char * const format, ...)
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
-		{"s", print_string}
+		{"s", print_string},
+		{NULL, NULL}
 			};
 	int cnt = 0, f;
 	va_list res;
 	char *sep = "";
+
 
 	va_start(res, format);
 	while (format && *(format + cnt))
