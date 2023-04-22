@@ -7,7 +7,6 @@ void print_int(va_list vab);
 void print_char(va_list vab);
 void print_float(va_list vab);
 void print_string(va_list vab);
-void print_all(const char * const format, ...);
 /**
  * print_all - a function thas print all format of value
  * passed to it.
