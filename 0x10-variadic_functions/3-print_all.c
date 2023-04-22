@@ -26,10 +26,10 @@ void print_all(const char * const format, ...)
 	va_list res;
 	char *sep = "";
 
+	va_start(res, format);
 	if (!(format))
 		return;
 
-	va_start(res, format);
 	while (format && *(format + cnt))
 	{
 		f = 0;
