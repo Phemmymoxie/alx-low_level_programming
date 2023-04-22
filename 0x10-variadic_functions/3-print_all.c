@@ -27,8 +27,6 @@ void print_all(const char * const format, ...)
 	char *sep = "";
 
 	va_start(res, format);
-	if (!(format))
-		return;
 
 	while (format && *(format + cnt))
 	{
@@ -44,7 +42,8 @@ void print_all(const char * const format, ...)
 		}
 	cnt++;
 	}
-
+	if(!(format))
+		return;
 	printf("\n");
 
 	va_end(res);
