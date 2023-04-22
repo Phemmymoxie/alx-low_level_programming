@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "variadic_functions.h"
+#include <stdlib.h>
 
 void print_int(va_list vab);
 void print_char(va_list vab);
@@ -43,7 +44,7 @@ void print_all(const char * const format, ...)
 	cnt++;
 	}
 	if(!(format))
-		return;
+		exit(-1);
 	printf("\n");
 
 	va_end(res);
