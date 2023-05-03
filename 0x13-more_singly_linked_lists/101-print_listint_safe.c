@@ -65,10 +65,10 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (num == 0)
 	{
-		for (cnt2 = 0; res != NULL; res = res->next)
+		for (cnt2 = 0; res != NULL; cnt2++)
 		{
 			printf("[%p] %d\n", (void *)res, res->n);
-			cnt2++;
+			res = res->next;
 		}
 	}
 	else
