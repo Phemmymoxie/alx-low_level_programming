@@ -26,7 +26,7 @@ size_t loop_num(const listint_t *head)
 
 		if (snl == hor)
 		{
-			cnt = 3;
+			cnt = 1;
 			temp = hor->next;
 			while (temp != snl)
 			{
@@ -73,7 +73,7 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	else
 	{
-		for (cnt2 = 0; cnt2 < num; cnt2++)
+		for (cnt2 = 0; cnt2 < num + 2; cnt2++)
 		{
 			printf("[%p] %d\n", (void *)res, res->n);
 			res = res->next;
