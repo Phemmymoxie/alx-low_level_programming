@@ -19,7 +19,7 @@ size_t loop_num(const listint_t *head)
 	snl = head;
 	hor = head;
 
-	while (snl != NULL && hor != NULL && hor->next != NULL)
+	while (snl != NULL && hor != NULL)
 	{
 		snl = snl->next;
 		hor = hor->next->next;
@@ -55,8 +55,8 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (head == NULL)
 	{
-		exit(98);
 		return (0);
+		exit(98);
 	}
 
 	num = loop_num(head);
