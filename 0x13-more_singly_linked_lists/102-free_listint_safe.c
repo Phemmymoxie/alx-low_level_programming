@@ -73,7 +73,7 @@ size_t free_listint_safe(listint_t **head)
 	}
 	else
 	{
-		for (cnt2 = 0; cnt2 < num + 2 && *head != NULL; cnt2++)
+		for (cnt2 = 0; cnt2 < num + 2; cnt2++)
 		{
 			res = *head;
 			*head = (*head)->next;
