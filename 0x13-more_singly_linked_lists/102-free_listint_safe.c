@@ -9,7 +9,7 @@
  */
 size_t loop_num_2(listint_t *head)
 {
-	listint_t *snl, *hor, *temp;
+	listint_t *snl, *hor;
 	size_t cnt;
 
 
@@ -27,13 +27,20 @@ size_t loop_num_2(listint_t *head)
 		if (snl == hor)
 		{
 			cnt = 1;
-			temp = hor->next;
-			while (temp != snl)
+			snl = head;
+			while (snl != hor)
 			{
-				temp = temp->next;
+				snl = snl->next;
+				hor = hor->next;
 				cnt++;
 			}
 
+			snl = snl->next;
+			while (snl != hor)
+			{
+				cnt++;
+				snl = snl->next;
+			}
 			return (cnt);
 		}
 
@@ -73,7 +80,7 @@ size_t free_listint_safe(listint_t **head)
 	}
 	else
 	{
-		for (cnt2 = 0; cnt2 < num + 2; cnt2++)
+		for (cnt2 = 0; cnt2 < num; cnt2++)
 		{
 			res = *head;
 			*head = (*head)->next;
