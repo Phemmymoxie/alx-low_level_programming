@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 	unsigned long int res;
 	int zero_flag;
 
-	res  = 2147483648;
+	res  = 1UL << 63;
 	zero_flag = 1;
 
 	while (res > 0)
