@@ -33,12 +33,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	ret = write(1, buff, file_r);
 
-	if (ret == -1 || ret < file_r)
+	if (ret == -1 || ret != file_r)
 		return (0);
 
 	cl = close(file);
 	if (cl == -1)
 		return (0);
-
+free(buff);
 return (file_r);
 }
