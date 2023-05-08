@@ -4,6 +4,36 @@
 #include <fcntl.h>
 
 /**
+ * error_handler - function thats prints error message
+ * @code: a code to track which error message to print
+ * @a: a pointer to a string
+ * Return: void.
+ */
+void error_handler(int code, char *a)
+{
+	if (code < 0 || code > 3)
+		return;
+
+	else if (code == 0)
+	{
+		dprintf(2, "Error: Can't close fd %s\n", a);
+		exit(100);
+	}
+
+	else if (code == 1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", a);
+		exit(98);
+	}
+
+	else if (code == 2)
+	{
+		dprintf(2, "Error: Can't write to %s\n", a);
+		exit(99);
+	}
+}
+
+/**
  * main - main code execution
  * @argc: the length of argument passed
  * @argv: a two dimensional array of argument passed to the function
@@ -22,34 +52,28 @@ int main(int argc, char **argv)
 	}
 
 	file_from = open(argv[1], O_RDONLY);
-	file_r = read(file_from, buff, 1024);
+	if (file_from == -1)
+		error_handler(1, argv[1]);
 
-	if (file_from == -1 || file_r == -1)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+	file_r = read(file_from, buff, 1024);
+	if (file_r == -1)
+		error_handler(1, argv[1]);
 
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	wrt = dprintf(file_to, "%s", buff);
+	if (file_to == -1)
+		error_handler(2, argv[2]);
 
-	if (file_to == -1 || wrt == -1)
-	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+	wrt = dprintf(file_to, "%s", buff);
+	if (wrt == -1)
+		error_handler(2, argv[2]);
 
 	cl_1 = close(file_from);
 	if (cl_1 == -1)
-	{
-		dprintf(2, "Can't close fd %d\n", cl_1);
-		exit(100);
-	}
+		error_handler(0, "-1");
+
 	cl_2 = close(file_to);
 	if (cl_2 == -1)
-	{
-		dprintf(2, "Can't close fd %d\n", cl_1);
-		exit(100);
-	}
+		error_handler(0, "-1");
+
 return (0);
 }
