@@ -42,7 +42,7 @@ void error_handler(int code, char *a)
  */
 int main(int argc, char **argv)
 {
-	int file_from, file_to, file_r, wrt, cl_1, cl_2;
+	int file_from, file_to, file_r, wrt, cl_1, cl_2, v = 0;
 	char buff[1024];
 
 	if (argc != 3)
@@ -63,9 +63,13 @@ int main(int argc, char **argv)
 	if (file_to == -1)
 		error_handler(2, argv[2]);
 
-	wrt = dprintf(file_to, "%s", buff);
-	if (wrt == -1)
-		error_handler(2, argv[2]);
+	while (buff[v] != '\0')
+	{
+		wrt = write(file_to, &buff[v], 1);
+		if (wrt == -1)
+			error_handler(2, argv[2]);
+		v++;
+	}
 
 	cl_1 = close(file_from);
 	if (cl_1 == -1)
