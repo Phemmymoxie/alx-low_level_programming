@@ -40,17 +40,17 @@ void error_handler(int code, char *a)
  *
  * Return: Always (0).
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int file_from, file_to, file_r, wrt, cl_1, cl_2, v = 0;
-	char buff[1024];
+	char buff[3000];
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (!(*argv))
+	if (!(argv))
 		return (0);
 
 	file_from = open(argv[1], O_RDONLY);
