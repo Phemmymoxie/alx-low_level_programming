@@ -16,19 +16,19 @@ void error_handler(int code, char *a)
 
 	else if (code == 0)
 	{
-		dprintf(2, "Error: Can't close fd %s\n", a);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", a);
 		exit(100);
 	}
 
 	else if (code == 1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", a);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", a);
 		exit(98);
 	}
 
 	else if (code == 2)
 	{
-		dprintf(2, "Error: Can't write to %s\n", a);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", a);
 		exit(99);
 	}
 }
@@ -47,7 +47,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	if (!(*argv))
