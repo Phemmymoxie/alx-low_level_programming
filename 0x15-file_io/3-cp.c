@@ -68,8 +68,8 @@ int main(int argc, char *argv[])
 	while (buff[v] != '\0')
 	{
 		wrt = write(file_to, &buff[v], 1);
-		if (wrt == -1)
-			error_handler(2, argv[2]);
+		/*if (wrt == -1)
+			error_handler(2, argv[2]);*/
 		v++;
 	}
 
