@@ -14,12 +14,6 @@ void error_handler(int code, char *a)
 	if (code < 0 || code > 3)
 		return;
 
-	else if (code == 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", a);
-		exit(100);
-	}
-
 	else if (code == 1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", a);
@@ -52,7 +46,6 @@ int main(int argc, char *argv[])
 	}
 	if (!(argv))
 		return (0);
-
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 		error_handler(1, argv[1]);
@@ -72,14 +65,11 @@ int main(int argc, char *argv[])
 			error_handler(2, argv[2]);
 		v++;
 	}
-
-	cl_1 = close(file_from);
-	if (cl_1 == -1)
-		error_handler(0, "-1");
-
-	cl_2 = close(file_to);
-	if (cl_2 == -1)
-		error_handler(0, "-1");
-
+	cl_1 = close(file_from), cl_2 = close(file_to);
+	if (cl_1 == -1 || cl_2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl_1);
+		exit(100);
+	}
 return (0);
 }
