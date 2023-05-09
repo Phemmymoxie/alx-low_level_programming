@@ -57,13 +57,15 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
 		error_handler(2, argv[2]);
-
+	if (file_r > 0)
+	{
 	while (buff[v] != '\0')
 	{
 		wrt = write(file_to, &buff[v], 1);
 		if (wrt == -1)
 			error_handler(2, argv[2]);
 		v++;
+	}
 	}
 	cl_1 = close(file_from), cl_2 = close(file_to);
 	if (cl_1 == -1 || cl_2 == -1)
