@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (!(argv))
+	if (!(argv[1]))
 		error_handler(1, argv[1]);
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
