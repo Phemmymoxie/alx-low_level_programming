@@ -36,8 +36,8 @@ void error_handler(int code, char *a)
  */
 int main(int argc, char *argv[])
 {
-	int file_from, file_to, file_r, wrt, cl_1, cl_2, v = 0;
-	char buff[3000];
+	int file_from, file_to, file_r, wrt, cl_1, cl_2;
+	char *buff;
 
 	if (argc != 3)
 	{
@@ -46,6 +46,8 @@ int main(int argc, char *argv[])
 	}
 	if (!(argv[1]))
 		error_handler(1, argv[1]);
+	buff = malloc(sizeof(char) * 3000);
+
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 		error_handler(1, argv[1]);
@@ -58,13 +60,10 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_r > 0)
 	{
-	while (buff[v] != '\0')
-	{
-		wrt = write(file_to, &buff[v], 1);
-		if (wrt == -1)
-			error_handler(2, argv[2]);
-		v++;
-	}
+	wrt = write(file_to, buff, 3000);
+	if (wrt == -1)
+		error_handler(2, argv[2]);
+
 	}
 	cl_1 = close(file_from), cl_2 = close(file_to);
 	if (cl_1 == -1 || cl_2 == -1)
@@ -72,5 +71,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl_1);
 		exit(100);
 	}
+free(buff);
 return (0);
 }
