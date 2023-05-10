@@ -53,10 +53,9 @@ int main(int argc, char *argv[])
 	file_r = read(file_from, buff, 3000);
 	if (file_r == -1)
 		error_handler(1, argv[1]);
-
-	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (file_to == -1)
+	if (!(argv[2]))
 		error_handler(2, argv[2]);
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_r > 0)
 	{
 	while (buff[v] != '\0')
