@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	if (!(argv))
-		return (0);
+		error_handler(1, argv[1]);
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 		error_handler(1, argv[1]);
