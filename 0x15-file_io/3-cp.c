@@ -37,7 +37,7 @@ void error_handler(int code, char *a)
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, file_r, wrt, cl_1, cl_2, v = 0;
-	char buff[3000];
+	char buff[6000];
 
 	if (argc != 3)
 	{
