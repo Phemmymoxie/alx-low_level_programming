@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include "main.h"
 
 /**
  * error_handler - function thats prints error message
@@ -17,13 +18,13 @@ void error_handler(int code, char *a)
 	else if (code == 1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", a);
-		exit(98);
+		exit(EXIT_CODE);
 	}
 
 	else if (code == 2)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", a);
-		exit(99);
+		exit(EXIT_CODE);
 	}
 }
 
@@ -37,7 +38,7 @@ void error_handler(int code, char *a)
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, file_r, wrt, cl_1, cl_2, v = 0;
-	char buff[3000];
+	char buff[1024];
 
 	if (argc != 3)
 	{
@@ -71,7 +72,7 @@ int main(int argc, char *argv[])
 	if (cl_1 == -1 || cl_2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl_1);
-		exit(100);
+		exit(EXIT_CODE);
 	}
 return (0);
 }
