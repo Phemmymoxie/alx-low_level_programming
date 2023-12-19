@@ -18,13 +18,13 @@ void error_handler(int code, char *a)
 	else if (code == 1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", a);
-		exit(EXIT_CODE - 2);
+		exit(98);
 	}
 
 	else if (code == 2)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", a);
-		exit(EXIT_CODE - 1);
+		exit(99);
 	}
 }
 
@@ -38,7 +38,7 @@ void error_handler(int code, char *a)
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, file_r, wrt, cl_1, cl_2, v = 0;
-	char buff[1024];
+	char buff[3000];
 
 	if (argc != 3)
 	{
@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 	if (cl_1 == -1 || cl_2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl_1);
-		exit(EXIT_CODE);
+		exit(100);
 	}
 return (0);
 }
