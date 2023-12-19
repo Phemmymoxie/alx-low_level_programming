@@ -18,13 +18,13 @@ void error_handler(int code, char *a)
 	else if (code == 1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", a);
-		exit(EXIT_CODE);
+		exit(EXIT_CODE - 2);
 	}
 
 	else if (code == 2)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", a);
-		exit(EXIT_CODE);
+		exit(EXIT_CODE - 1);
 	}
 }
 
