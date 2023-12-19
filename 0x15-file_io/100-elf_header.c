@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <elf.h>
 #include <stdlib.h>
 #include "main.h"
+#include <elf.h>
+
 
 /**
  * print_magic_number - ELF magic number.
